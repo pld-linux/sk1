@@ -13,7 +13,6 @@ URL:		http://www.sk1project.org/
 BuildRequires:	pkgconfig >= 1:0.21-2
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-devel >= 1:%py_ver
-#BuildRequires:	python-wxPython >= 2.5
 BuildRequires:	cairo-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -22,7 +21,6 @@ BuildRequires:	tk-devel
 Requires:	python-PIL
 Requires:	python-lcms
 Requires:	python-tkinter
-#Requires:	python-wxPython
 #Suggests:	bluez-gnome
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
