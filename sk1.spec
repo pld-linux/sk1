@@ -10,13 +10,15 @@ Group:		Applications/Communications
 Source0:	http://www.sk1project.org/downloads/sk1/0.9.1pre_rev730/%{name}-%{version}pre_rev730.tar.gz
 # Source0-md5:	723dbc0ef9b5426a8e9d4b132421c838
 URL:		http://www.sk1project.org/
+BuildRequires:	cairo-devel
+BuildRequires:	lcms-devel
 BuildRequires:	pkgconfig >= 1:0.21-2
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-devel >= 1:%py_ver
-BuildRequires:	cairo-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	tk-devel
+BuildRequires:	xorg-lib-libXext-devel
 %pyrequires_eq	python = %py_ver
 Requires:	python-PIL
 Requires:	python-lcms
@@ -52,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 #-f %{name}.lang
 %defattr(644,root,root,755)
 #%doc AUTHORS FAQ README
