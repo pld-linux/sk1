@@ -4,11 +4,11 @@ Summary:	sK1 - illustration program
 Summary(pl.UTF-8):	sK1 - program do ilustracji
 Name:		sk1
 Version:	0.9.1
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		Applications/Communications
-Source0:	http://www.sk1project.org/downloads/sk1/0.9.1pre_rev730/%{name}-%{version}pre_rev730.tar.gz
-# Source0-md5:	723dbc0ef9b5426a8e9d4b132421c838
+Source0:	https://sk1.googlecode.com/files/%{name}-0.9.1pre2_rev1383.tar.gz
+# Source0-md5:	ce8a98e99e133b215b7ed67d6b0e0113
 URL:		http://www.sk1project.org/
 BuildRequires:	cairo-devel
 BuildRequires:	lcms-devel
@@ -22,6 +22,8 @@ BuildRequires:	xorg-lib-libXext-devel
 %pyrequires_eq	python = %py_ver
 Requires:	python-PIL
 Requires:	python-lcms
+Requires:	python-sk1libs >= 0.9.1
+Requires:	python-sk1sdk >= 0.9.1
 Requires:	python-tkinter
 #Suggests:	bluez-gnome
 BuildArch:	noarch
@@ -38,7 +40,7 @@ sK1 to program do ilustracji
 * wsparcie dla plikow cdr (Corel 7 - X3)
 
 %prep
-%setup -q -n sK1-%{version}pre
+%setup -q -n sk1-%{version}pre2
 
 %build
 %{__python} setup.py build
@@ -59,8 +61,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 #%doc AUTHORS FAQ README
 %attr(755,root,root) %{_bindir}/*
-#%{_pixmapsdir}/%{name}.*
 %dir %py_sitedir/sk1
 %{py_sitedir}/sk1/*
 %{py_sitedir}/*.egg-info
-#%{_desktopdir}/%{name}.desktop
+
+%{_pixmapsdir}/%{name}.png
+%{_pixmapsdir}/%{name}.xpm
+%{_desktopdir}/%{name}.desktop
