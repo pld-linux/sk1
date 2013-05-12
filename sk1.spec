@@ -7,6 +7,7 @@ Version:	0.9.1
 Release:	0.%{subver}.2
 License:	GPL v2
 Group:		Applications/Communications
+#Source0Download: http://code.google.com/p/sk1/downloads/list
 Source0:	https://sk1.googlecode.com/files/%{name}-%{version}%{subver}_rev1383.tar.gz
 # Source0-md5:	ce8a98e99e133b215b7ed67d6b0e0113
 URL:		http://www.sk1project.org/
